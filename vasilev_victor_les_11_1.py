@@ -11,11 +11,11 @@ class Date:
 
     @staticmethod  # должен проводить валидацию числа, месяца и года
     def sm(obj):
-        if 0 < obj.day <= 31 and 0 < obj.month <= 12 and 0 <= obj.year:
+        if 0 < obj.day <= 31 and 0 < obj.month <= 12 and 0 <= obj.year <= 2022:
             return f'день - {obj.day}, месяц - {obj.month}, год - {obj.year}'
         else:
             return 'Некорректная дата'
 
 
-data_1 = Date.cm('12-13-95')
+data_1 = Date.cm('12-12-1995')
 print(Date.sm(data_1))
