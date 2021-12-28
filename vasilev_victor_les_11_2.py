@@ -11,6 +11,6 @@ try:
         raise MyException('Деление на ноль недопустимо')
     res = a / b
 except MyException as err:
-    print('Деление на ноль не допустимо')
+    print(err)
 else:
     print(f'Результат - {res}')
