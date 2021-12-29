@@ -3,7 +3,7 @@ class OfEqStock:  # склад
         self.storage = {}
 
     def store(self, equip):
-        self.storage.setdefault(equip.tip(), []).append(equip)
+        self.storage.setdefault(equip.tips(), []).append(equip)
 
 
 class OfficeEquipment:  # создание оргтехники
@@ -11,7 +11,7 @@ class OfficeEquipment:  # создание оргтехники
         self.tip = self.__class__.__name__
         self.brand = brand
 
-    def tip(self, count=1):
+    def tips(self):
         return f'{self.tip}'
 
     def __repr__(self):
@@ -48,8 +48,8 @@ class Copier(OfficeEquipment):  # создание копера
 stock = OfEqStock()
 printer = Printer('HP', 110)
 stock.store(printer)
-scanner = Scanner('Samsung', 2)
+scanner = Scanner('Samsung', 201)
 stock.store(scanner)
-copier = Copier('Xerox', 100)
+copier = Copier('Xerox', 124)
 stock.store(copier)
 print(stock.storage)
